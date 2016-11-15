@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+set -e
+
+MIX_ENV='test' mix espec --format=doc
+bin/quality

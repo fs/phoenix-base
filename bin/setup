@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+HIST_DIR="~/.erlang-history/"
+
+set -e
+
+mix local.hex
+mix deps.get
+mix compile
+
+if [ ! -d "$HIST_DIR" ]; then
+  git clone https://github.com/ferd/erlang-history.git $HIST_DIR
+  cd $HIST_DIR
+  sudo make install
+  cd -
+fi
+
+mix ecto.create
+npm install
