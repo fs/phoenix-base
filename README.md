@@ -46,7 +46,7 @@ It's based on Elixir 1.3 and Phoenix 1.2.
 
 ### Prepare dependencies
 
-Elixir v1.3 should be installed.
+Elixir v1.3 and Postgres should be installed.
 
 ### Bootstrap application
 
