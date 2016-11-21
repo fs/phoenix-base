@@ -22,7 +22,7 @@ defmodule PhoenixBase.Mixfile do
       elixirc_paths: elixirc_paths(Mix.env),
       applications: ~w(phoenix phoenix_pubsub phoenix_html cowboy logger gettext
                        phoenix_ecto postgrex erlexec effects guardsafe monadex
-                       timex)a
+                       timex comeonin)a
     ]
   end
 
@@ -37,6 +37,7 @@ defmodule PhoenixBase.Mixfile do
   defp deps do
     [
       {:cowboy, "~> 1.0"},
+      {:comeonin, "~> 2.5"},
       {:effects, "~> 0.1.0"},
       {:erlexec, "~> 1.2.1"},
       {:exrm, "~> 1.0.5"},
