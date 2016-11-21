@@ -1,9 +1,11 @@
+require IEx
 defmodule PhoenixBase.User do
   @moduledoc """
     User schema
   """
 
   use PhoenixBase.Web, :model
+  alias Comeonin.Bcrypt
 
   schema "users" do
     field :name, :string
@@ -19,9 +21,17 @@ defmodule PhoenixBase.User do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:name, :email, :encrypted_password])
-    |> validate_required([:name, :password])
+    |> cast(params, ~w(name email password)a)
     |> unique_constraint(:name)
     |> validate_length(:password, min: 6)
+    |> hash_password
+    |> validate_required(~w(name password)a)
+  end
+
+  defp hash_password(changeset) do
+    case get_change(changeset, :password) do
+      p when is_nil(p) -> changeset
+      p -> changeset |> put_change(:encrypted_password, p |> Bcrypt.hashpwsalt)
+    end
   end
 end
