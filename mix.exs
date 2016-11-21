@@ -22,7 +22,7 @@ defmodule PhoenixBase.Mixfile do
       elixirc_paths: elixirc_paths(Mix.env),
       applications: ~w(phoenix phoenix_pubsub phoenix_html cowboy logger gettext
                        phoenix_ecto postgrex erlexec effects guardsafe monadex
-                       timex comeonin)a
+                       timex comeonin faker)a
     ]
   end
 
@@ -41,6 +41,7 @@ defmodule PhoenixBase.Mixfile do
       {:effects, "~> 0.1.0"},
       {:erlexec, "~> 1.2.1"},
       {:exrm, "~> 1.0.5"},
+      {:faker, "~> 0.7"},
       {:gettext, "~> 0.11"},
       {:guardian, "~> 0.13.0"},
       {:guardsafe, "~> 0.5.0"},
@@ -58,10 +59,9 @@ defmodule PhoenixBase.Mixfile do
       {:edeliver, ">= 1.2.9", only: :dev},
       {:eper, "~> 0.94.0", only: :dev},
       {:ex_doc, "~> 0.11", only: :dev},
-      {:ex_machina, "~> 0.6.1", only: ~w(dev test)a},
+      {:ex_machina, "~> 1.0", only: ~w(dev test)a},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
-      {:espec, "~> 1.1.0", only: :test},
-      {:faker, "~> 0.5", only: :test}
+      {:espec, "~> 1.1.0", only: :test}
     ]
   end
 
