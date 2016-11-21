@@ -1,3 +1,3 @@
-defmodule PhoenixGuardian.UserView do
-  use PhoenixGuardian.Web, :view
+defmodule PhoenixBase.UserView do
+  use PhoenixBase.Web, :view
 end

@@ -1,4 +1,8 @@
 defmodule PhoenixBase.Router do
+  @moduledoc """
+    Application routes
+  """
+
   use PhoenixBase.Web, :router
 
   pipeline :browser do
@@ -19,8 +23,11 @@ defmodule PhoenixBase.Router do
   end
 
   scope "/", PhoenixBase do
-    pipe_through [:browser, :browser_auth]
+    pipe_through ~w(browser browser_auth)a
 
     get "/", PageController, :index
+    resources "/users", UserController, only: ~w(index)a
+
+    get "/*path", PageController, :index
   end
 end
