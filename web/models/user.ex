@@ -21,7 +21,7 @@ defmodule PhoenixBase.User do
     struct
     |> cast(params, [:name, :email, :encrypted_password])
     |> validate_required([:name, :password])
-    |> validate_unique(:name, on: PhoenixBase.Repo, downcase: true)
+    |> unique_constraint(:name)
     |> validate_length(:password, min: 6)
   end
 end
