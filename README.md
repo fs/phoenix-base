@@ -12,6 +12,7 @@ It's based on Elixir 1.3 and Phoenix 1.2.
 * [ErlExec](https://github.com/saleyn/erlexec) execute and control OS processes from Erlang/OTP
 * [Elixir release manager](https://github.com/bitwalker/exrm) for Elixir's apps release management
 * [ExtensibleEffects](https://github.com/metalabdesign/effects) Monadic, softly-typed, extensible effect handling
+* [Guardian](https://github.com/ueberauth/guardian) an authentication framework
 * [Guardsafe](https://github.com/DevL/guardsafe) macros expanding into code that can be safely used in guard clauses
 * [LoggerFileBackend](https://github.com/onkel-dirtus/logger_file_backend) for writing logs into file
 * [Monadex](https://github.com/rob-brown/MonadEx) improve pipelines with monads

@@ -41,6 +41,7 @@ defmodule PhoenixBase.Mixfile do
       {:erlexec, "~> 1.2.1"},
       {:exrm, "~> 1.0.5"},
       {:gettext, "~> 0.11"},
+      {:guardian, "~> 0.13.0"},
       {:guardsafe, "~> 0.5.0"},
       {:logger_file_backend, "~> 0.0.9"},
       {:monadex, "~> 1.0.2"},
