@@ -9,18 +9,18 @@ defmodule PhoenixBase.Router do
     plug :put_secure_browser_headers
   end
 
+  pipeline :browser_auth do
+    plug Guardian.Plug.VerifySession
+    plug Guardian.Plug.LoadResource
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
   end
 
   scope "/", PhoenixBase do
-    pipe_through :browser # Use the default browser stack
+    pipe_through [:browser, :browser_auth]
 
     get "/", PageController, :index
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", PhoenixBase do
-  #   pipe_through :api
-  # end
 end
