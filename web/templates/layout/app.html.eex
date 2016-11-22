@@ -12,15 +12,26 @@
   </head>
 
   <body>
-    <div class="container">
-      <header class="header">
-        <nav role="navigation">
-          <ul class="nav nav-pills pull-right">
-            <li><a href="/">Phoenix Base</a></li>
-          </ul>
-        </nav>
-      </header>
+    <nav role="navigation" class="nav">
+      <div class="nav-left">
+        <a class="nav-item is-brand title" href="/">
+          Phoenix Base
+        </a>
+      </div>
 
+      <div class="nav-center">
+        <a class="nav-item is-active" href="/users">Users</a>
+      </div>
+
+      <div class="nav-right">
+        <a class="nav-item" href="#">Sign In</a>
+        <a class="nav-item" href="#">Sign Up</a>
+      </div>
+    </nav>
+
+    <br>
+
+    <div class="container">
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 

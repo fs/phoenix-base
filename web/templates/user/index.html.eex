@@ -1,9 +1,10 @@
-<h1>Users</h1>
+<h1 class="title has-text-centered">Users</h1>
 
-<table class=”table”>
+<table class="table">
   <%= for user <- @users do %>
     <tr>
-      <td><%= user.email %> </td>
+      <td><%= user.email %></td>
+      <td><%= user.name %></td>
     </tr>
   <% end %>
 </table>

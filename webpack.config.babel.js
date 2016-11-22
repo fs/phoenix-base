@@ -1,13 +1,12 @@
 // Example webpack configuration with asset fingerprinting in production.
 import path from 'path';
 import Webpack from 'webpack';
+import ExtractText from 'extract-text-webpack-plugin';
 
 const production = process.env.MIX_ENV === 'prod' || process.env.MIX_ENV == 'staging';
 
 const config = {
-  entry: {
-    application: './web/static/js/index.js'
-  },
+  entry: ['./web/static/js/index.js', './web/static/css/app.scss'],
 
   module: {
     loaders: [{
@@ -17,19 +16,21 @@ const config = {
     }, {
       test: /\.json/,
       loader: 'json-loader'
+    }, {
+        test: /\.scss$/,
+        loader: ExtractText.extract('style', 'css!sass')
     }]
   },
 
   output: {
-    path: "./priv/static/js",
-    publicPath: "/",
-    filename: production ? 'app-[chunkhash].js' : 'app.js'
+    path: './priv/static',
+    filename: production ? 'js/app-[chunkhash].js' : 'js/app.js'
   },
 
   resolve: {
     root: path.join(__dirname, '..', 'web', 'static', 'js'),
     modulesDirectories: ['node_modules', 'vendor/assets/javascript'],
-    extensions: ['', '.js', '.jsx', '.json'],
+    extensions: ['', '.js', '.jsx', '.json', '.scss', '.css'],
     alias: {
       jquery: 'jquery/dist/jquery',
       'jquery-mousewheel': 'jquery.mousewheel',
@@ -39,12 +40,13 @@ const config = {
   },
 
   plugins: [
-  // Important to keep React file size down
+    // Important to keep React file size down
     new Webpack.DefinePlugin({
-      "process.env": {
-        "NODE_ENV": process.env.MIX_ENV
+      'process.env': {
+        'NODE_ENV': process.env.MIX_ENV
       },
-    })
+    }),
+    new ExtractText("css/app.css", { allChunks: true })
   ]
 };
 

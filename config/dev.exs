@@ -12,7 +12,10 @@ config :phoenix_base, PhoenixBase.Endpoint,
   code_reloader: true,
   check_origin: false,
   watchers: [
-    node: ["node_modules/webpack/bin/webpack.js", "--watch-stdin", "--colors"]
+    node: ["node_modules/webpack/bin/webpack.js",
+           "--watch-stdin",
+           "--progress",
+           "--colors"]
   ]
 
 
