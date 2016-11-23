@@ -26,7 +26,9 @@ defmodule PhoenixBase.Router do
     pipe_through ~w(browser browser_auth)a
 
     get "/", PageController, :index
+
     resources "/users", UserController, only: ~w(index new create)a
+    resources "/sessions", SessionController, only: ~w(new create destroy)a
 
     get "/*path", PageController, :index
   end
