@@ -6,7 +6,10 @@ import ExtractText from 'extract-text-webpack-plugin';
 const production = process.env.MIX_ENV === 'prod' || process.env.MIX_ENV == 'staging';
 
 const config = {
-  entry: ['./web/static/js/index.js', './web/static/css/app.scss'],
+  entry: [
+    './web/static/js/index.js',
+    './web/static/css/app.scss'
+  ],
 
   module: {
     loaders: [{
@@ -19,6 +22,12 @@ const config = {
     }, {
         test: /\.scss$/,
         loader: ExtractText.extract('style', 'css!sass')
+    }, {
+        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'url-loader?limit=10000&minetype=application/font-woff'
+    }, {
+        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'file-loader'
     }]
   },
 
@@ -30,13 +39,7 @@ const config = {
   resolve: {
     root: path.join(__dirname, '..', 'web', 'static', 'js'),
     modulesDirectories: ['node_modules', 'vendor/assets/javascript'],
-    extensions: ['', '.js', '.jsx', '.json', '.scss', '.css'],
-    alias: {
-      jquery: 'jquery/dist/jquery',
-      'jquery-mousewheel': 'jquery.mousewheel',
-      'jquery-ui/widget': 'jquery.ui.widget/jquery.ui.widget',
-      foundation: 'foundation-sites/js/foundation.min'
-    }
+    extensions: ['', '.js', '.jsx', '.json', '.scss', '.css']
   },
 
   plugins: [
