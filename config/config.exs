@@ -27,7 +27,7 @@ config :guardian, Guardian,
   issuer: "PhoenixBase",
   ttl: { 3, :days },
   verify_issuer: true,
-  secret_key: {PhoenixBase.SecretKey, :fetch},
+  secret_key: "yoursecretkey_yoursecretkey", #{PhoenixBase.SecretKey, :fetch},
   serializer: PhoenixBase.GuardianSerializer
 
 # Import environment specific config. This must remain at the bottom
