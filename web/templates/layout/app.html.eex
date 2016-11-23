@@ -32,14 +32,37 @@
     <br>
 
     <div class="container">
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+      <%= if get_flash(@conn, :info) do %>
+        <div class="notification is-primary">
+          <button class="delete"></button>
+
+          <%= get_flash(@conn, :info) %>
+        </div>
+      <% end %>
+
+      <%= if get_flash(@conn, :error) do %>
+        <div class="notification is-danger">
+          <button class="delete"></button>
+
+          <%= get_flash(@conn, :error) %>
+        </div>
+      <% end %>
 
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
       </main>
 
     </div> <!-- /container -->
+
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <p class="paragraph">Phoenix Base</p>
+          <p class="paragraph">2016 © Flatstack</p>
+        </div>
+      </div>
+    </footer>
+
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
