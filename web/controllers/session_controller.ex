@@ -8,6 +8,9 @@ defmodule PhoenixBase.SessionController do
   alias Guardian.Plug
   alias Comeonin.Bcrypt
 
+  plug Plug.EnsureAuthenticated, [handler: ErrorHandler] when action in ~w(destroy)a
+  plug Plug.EnsureNotAuthenticated, [handler: ErrorHandler] when action in ~w(new create)a
+
   def new(conn, _params), do: render conn, "new.html"
 
   def create(conn, params) do
@@ -16,7 +19,7 @@ defmodule PhoenixBase.SessionController do
         conn
         |> put_flash(:info, "Succesfully logged in")
         |> Plug.sign_in(user)
-        |> redirect(to: "/")
+        |> redirect(to: "/users")
       {:error} ->
         conn
         |> put_flash(:error, "Can not log in")
@@ -25,6 +28,7 @@ defmodule PhoenixBase.SessionController do
   end
 
   def destroy(conn, params) do
+    conn |> Plug.sign_out |> redirect(to: "/")
   end
 
   defp find_and_confirm_password(%{"session" => %{"name" => name,

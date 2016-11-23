@@ -5,6 +5,10 @@ defmodule PhoenixBase.UserController do
 
   use PhoenixBase.Web, :controller
   alias PhoenixBase.User
+  alias Guardian.Plug
+  alias PhoenixBase.ErrorHandler
+
+  plug Plug.EnsureAuthenticated, [handler: ErrorHandler] when action in ~w(index)a
 
   def index(conn, _params) do
     render conn, "index.html", users: Repo.all(User)
