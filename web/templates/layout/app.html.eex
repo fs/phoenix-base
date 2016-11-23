@@ -14,9 +14,7 @@
   <body>
     <nav role="navigation" class="nav">
       <div class="nav-left">
-        <a class="nav-item is-brand title" href="/">
-          Phoenix Base
-        </a>
+        <%= link "Phoenix Base", to: page_path(@conn, :index), class: "nav-item is-brand title" %>
       </div>
 
       <div class="nav-center">
