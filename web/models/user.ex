@@ -1,4 +1,3 @@
-require IEx
 defmodule PhoenixBase.User do
   @moduledoc """
     User schema

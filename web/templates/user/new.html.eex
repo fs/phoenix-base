@@ -1,0 +1,34 @@
+<h1 class="title has-text-centered">Registration</h1>
+
+<div class="columns">
+  <div class="column"></div>
+
+  <div class="column">
+    <%= form_for @changeset, user_path(@conn, :create), fn f -> %>
+      <div class="control">
+        <label class="label">Username</label>
+
+        <%= text_input f, :name, class: "input" %>
+
+        <span class="help is-danger">
+          <%= error_tag f, :name %>
+        </span>
+      </div>
+
+      <div class="control">
+        <label class="label">Password</label>
+
+        <%= password_input f, :password, class: "input" %>
+        <span class="help is-danger">
+        <%= error_tag f, :password %>
+        </span>
+      </div>
+
+      <div class="control">
+        <%= submit "Sign Up", class: "button is-primary" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="column"></div>
+</div>
