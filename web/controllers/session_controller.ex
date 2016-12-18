@@ -27,7 +27,7 @@ defmodule PhoenixBase.SessionController do
     end
   end
 
-  def destroy(conn, params) do
+  def destroy(conn, _params) do
     conn |> Plug.sign_out |> redirect(to: "/")
   end
 
