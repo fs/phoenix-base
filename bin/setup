@@ -16,4 +16,5 @@ if [ ! -d "$HIST_DIR" ]; then
 fi
 
 mix ecto.create
-npm install
+npm install yarn
+./node_modules/.bin/yarn install
