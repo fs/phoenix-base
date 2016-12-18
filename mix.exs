@@ -55,7 +55,6 @@ defmodule PhoenixBase.Mixfile do
       {:phoenix_ecto, "~> 3.0"},
       {:phoenix_html, "~> 2.6"},
       {:phoenix_pubsub, "~> 1.0"},
-      {:phoenix_slime, "~> 0.8.0"},
       {:postgrex, ">= 0.0.0"},
       {:timex, "~> 3.0"},
       {:credo, "~> 0.4", only: ~w(dev test)a},
