@@ -28,7 +28,7 @@ defmodule PhoenixBase.Router do
     get "/", PageController, :index
 
     resources "/users", UserController, only: ~w(index new create)a
-    resources "/sessions", SessionController, only: ~w(new create destroy)a
+    resources "/sessions", SessionController, only: ~w(new create delete)a
 
     get "/*path", PageController, :index
   end

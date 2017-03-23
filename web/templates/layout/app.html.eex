@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="csrf-token" content="<%= get_csrf_token() %>"/>
 
     <title>Phoenix Base</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
@@ -22,8 +23,12 @@
       </div>
 
       <div class="nav-right">
-        <a class="nav-item" href="/sessions/new">Sign In</a>
-        <a class="nav-item" href="/users/new">Sign Up</a>
+        <%= if logged_in?(@conn) do %>
+          <%= link "Sign Out", to: session_path(@conn, :delete, current_user(@conn)), method: :delete, class: "nav-item" %>
+        <% else %>
+          <%= link "Sign In", to: session_path(@conn, :new), class: "nav-item" %>
+          <%= link "Sign Up", to: user_path(@conn, :new), class: "nav-item" %>
+        <% end %>
       </div>
     </nav>
 

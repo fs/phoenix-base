@@ -8,7 +8,7 @@ defmodule PhoenixBase.SessionController do
   alias Guardian.Plug
   alias Comeonin.Bcrypt
 
-  plug Plug.EnsureAuthenticated, [handler: ErrorHandler] when action in ~w(destroy)a
+  plug Plug.EnsureAuthenticated, [handler: ErrorHandler] when action in ~w(delete)a
   plug Plug.EnsureNotAuthenticated, [handler: ErrorHandler] when action in ~w(new create)a
 
   def new(conn, _params), do: render conn, "new.html"
@@ -27,7 +27,7 @@ defmodule PhoenixBase.SessionController do
     end
   end
 
-  def destroy(conn, params) do
+  def delete(conn, _params) do
     conn |> Plug.sign_out |> redirect(to: "/")
   end
 
