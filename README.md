@@ -145,7 +145,9 @@ Please follow the next project structure:
 
 ## Testing
 
-Use ESpec to write RSpec-like tests.
+Hound tests require phantomjs started in WebDriver mode:
+
+`phantomjs --wd`
 
 ## Credits
 
