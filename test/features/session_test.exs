@@ -7,8 +7,6 @@ defmodule PhoenixBase.Features.Visitor.SignInTest do
   alias PhoenixBase.Repo
   alias PhoenixBase.Router.Helpers, as: Routes
 
-  alias Guardian.Plug
-
   hound_session()
 
   setup do

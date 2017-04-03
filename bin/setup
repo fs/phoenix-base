@@ -21,7 +21,6 @@ npm install yarn
 
 if [ "$CI" ]; then
   change-phantomjs-version 2.1.1
-  node_modules/.bin/brunch build
   MIX_ENV=test mix do deps.compile, compile
   phantomjs --wd --webdriver-loglevel=ERROR &
 fi

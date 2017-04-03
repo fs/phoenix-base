@@ -64,7 +64,7 @@ defmodule PhoenixBase.Mixfile do
       {:ex_doc, "~> 0.11", only: :dev},
       {:ex_machina, "~> 1.0", only: ~w(dev test)a},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
-      {:hound, "~> 1.0"}
+      {:hound, "~> 1.0", only: :test}
     ]
   end
 

@@ -7,6 +7,7 @@ defmodule PhoenixBase.SessionController do
   alias PhoenixBase.User
   alias Guardian.Plug
   alias Comeonin.Bcrypt
+  alias PhoenixBase.Router.Helpers, as: Routes
 
   plug Plug.EnsureAuthenticated,
     [handler: ErrorHandler] when action in ~w(delete)a
@@ -33,7 +34,7 @@ defmodule PhoenixBase.SessionController do
     conn
     |> put_flash(:info, "Succesfully logged out")
     |> Plug.sign_out
-    |> redirect(to: "/")
+    |> redirect(to: Routes.root_path(conn, :index))
   end
 
   defp find_and_confirm_password(%{"session" => %{"name" => name,
