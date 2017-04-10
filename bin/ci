@@ -2,6 +2,6 @@
 
 set -e
 
-MIX_ENV='test' mix espec --format=doc
+WEBDRIVER=phantomjs MIX_ENV=test mix test
 ./node_modules/.bin/karma start ./config/karma.js
 bin/quality

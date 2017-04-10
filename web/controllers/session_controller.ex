@@ -7,9 +7,12 @@ defmodule PhoenixBase.SessionController do
   alias PhoenixBase.User
   alias Guardian.Plug
   alias Comeonin.Bcrypt
+  alias PhoenixBase.Router.Helpers, as: Routes
 
-  plug Plug.EnsureAuthenticated, [handler: ErrorHandler] when action in ~w(destroy)a
-  plug Plug.EnsureNotAuthenticated, [handler: ErrorHandler] when action in ~w(new create)a
+  plug Plug.EnsureAuthenticated,
+    [handler: ErrorHandler] when action in ~w(delete)a
+  plug Plug.EnsureNotAuthenticated,
+    [handler: ErrorHandler] when action in ~w(new create)a
 
   def new(conn, _params), do: render conn, "new.html"
 
@@ -27,8 +30,11 @@ defmodule PhoenixBase.SessionController do
     end
   end
 
-  def destroy(conn, params) do
-    conn |> Plug.sign_out |> redirect(to: "/")
+  def delete(conn, _params) do
+    conn
+    |> put_flash(:info, "Succesfully logged out")
+    |> Plug.sign_out
+    |> redirect(to: Routes.root_path(conn, :index))
   end
 
   defp find_and_confirm_password(%{"session" => %{"name" => name,

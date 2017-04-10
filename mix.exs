@@ -28,7 +28,7 @@ defmodule PhoenixBase.Mixfile do
 
   # This makes sure your factory and any other modules in test/support are compiled
   # when in the test environment.
-  defp elixirc_paths(:test), do: ~w(lib web spec/support)
+  defp elixirc_paths(:test), do: ~w(lib web test/support)
   defp elixirc_paths(_), do: ~w(lib web)
 
   # Specifies your project dependencies.
@@ -64,7 +64,7 @@ defmodule PhoenixBase.Mixfile do
       {:ex_doc, "~> 0.11", only: :dev},
       {:ex_machina, "~> 1.0", only: ~w(dev test)a},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
-      {:espec, "~> 1.1.0", only: :test}
+      {:hound, "~> 1.0", only: :test}
     ]
   end
 

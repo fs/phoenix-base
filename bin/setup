@@ -18,3 +18,9 @@ fi
 mix ecto.create
 npm install yarn
 ./node_modules/.bin/yarn install
+
+if [ "$CI" ]; then
+  change-phantomjs-version 2.1.1
+  MIX_ENV=test mix do deps.compile, compile
+  phantomjs --wd --webdriver-loglevel=ERROR &
+fi
