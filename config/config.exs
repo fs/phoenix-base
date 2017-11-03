@@ -27,7 +27,7 @@ config :guardian, Guardian,
   issuer: "PhoenixBase",
   ttl: { 3, :days },
   verify_issuer: true,
-  secret_key: "yoursecretkey_yoursecretkey", #{PhoenixBase.SecretKey, :fetch},
+  secret_key: {PhoenixBase.SecretKey, :fetch},
   serializer: PhoenixBase.GuardianSerializer
 
 config :phoenix_base, PhoenixBase.Mailer,
