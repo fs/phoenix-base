@@ -18,3 +18,5 @@ config :phoenix_base, PhoenixBase.Repo,
 
 config :comeonin, :bcrypt_log_rounds, 4
 config :comeonin, :pbkdf2_rounds, 1
+
+config :hound, driver: "phantomjs"
