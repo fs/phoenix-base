@@ -27,7 +27,7 @@ config :guardian, Guardian,
   issuer: "PhoenixBase",
   ttl: { 3, :days },
   verify_issuer: true,
-  secret_key: "yoursecretkey_yoursecretkey", #{PhoenixBase.SecretKey, :fetch},
+  secret_key: {PhoenixBase.SecretKey, :fetch},
   serializer: PhoenixBase.GuardianSerializer
 
 config :phoenix_base, PhoenixBase.Mailer,
@@ -43,5 +43,3 @@ config :phoenix_base, PhoenixBase.Mailer,
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
-
-config :hound, driver: "phantomjs"
