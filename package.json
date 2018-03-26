@@ -43,7 +43,8 @@
     "url-loader": "0.5.7",
     "webpack": "https://registry.npmjs.org/webpack/-/webpack-1.13.2.tgz",
     "webpack-dev-server": "~1.16.2",
-    "webpack-dotenv-plugin": "~1.4.0"
+    "webpack-dotenv-plugin": "~1.4.0",
+    "yarn": "^1.5.1"
   },
   "devDependencies": {
     "babel-eslint": "~7.1.0",
