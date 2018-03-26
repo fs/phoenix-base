@@ -38,7 +38,7 @@
     "react-addons": "~0.9.1-deprecated",
     "react-addons-test-utils": "~15.3.2",
     "react-dom": "~15.3.2",
-    "sass-loader": "4.0.2",
+    "sass-loader": "4.1.1",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
     "webpack": "https://registry.npmjs.org/webpack/-/webpack-1.13.2.tgz",
