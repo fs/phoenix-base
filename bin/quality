@@ -4,4 +4,5 @@ set -e
 
 mix dialyzer
 mix credo --strict
+
 ./node_modules/.bin/eslint ./web/static/js ./config ./spec/javascripts --ext .js,.jsx --config ./config/eslint.js

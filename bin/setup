@@ -4,7 +4,8 @@ HIST_DIR="~/.erlang-history/"
 
 set -e
 
-mix local.hex
+mix local.hex --force
+mix local.rebar --force
 mix deps.get
 mix compile
 
@@ -16,6 +17,7 @@ if [ ! -d "$HIST_DIR" ]; then
 fi
 
 mix ecto.create
+mix ecto.migrate
 npm install yarn
 ./node_modules/.bin/yarn install
 
