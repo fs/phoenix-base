@@ -1,6 +1,6 @@
 {
   "name": "phoenix-base",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Phoenix-base app frontend",
   "main": "web/static/js/index.js",
   "keywords": [
