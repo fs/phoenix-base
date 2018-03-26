@@ -5,7 +5,7 @@
 [![Code Climate](https://codeclimate.com/github/fs/phoenix-base.png)](https://codeclimate.com/github/fs/phoenix-base)
 
 Phoenix Base is the base Phoenix app template used at Flatstack.
-It's based on Elixir 1.5 and Phoenix 1.2.
+It's based on Elixir 1.6 and Phoenix 1.2.
 
 ## Application libs
 
@@ -47,7 +47,7 @@ It's based on Elixir 1.5 and Phoenix 1.2.
 
 ### Prepare dependencies
 
-Elixir v1.5 and Postgres should be installed.
+Elixir v1.6 and Postgres should be installed.
 
 ### Bootstrap application
 

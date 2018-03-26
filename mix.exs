@@ -3,8 +3,8 @@ defmodule PhoenixBase.Mixfile do
 
   def project do
     [app: :phoenix_base,
-     version: "0.0.1",
-     elixir: "~> 1.5",
+     version: "0.0.2",
+     elixir: "~> 1.6",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix, :gettext] ++ Mix.compilers,
      build_embedded: Mix.env == :prod,
