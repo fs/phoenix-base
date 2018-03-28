@@ -18,8 +18,8 @@ fi
 
 mix ecto.create
 mix ecto.migrate
-npm install yarn
-./node_modules/.bin/yarn install
+
+yarn install
 
 if [ "$CI" ]; then
   change-phantomjs-version 2.1.1
