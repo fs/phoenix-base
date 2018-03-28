@@ -20,5 +20,5 @@ config :phoenix_base, PhoenixBase.Repo,
 
 config :comeonin, :bcrypt_log_rounds, 4
 config :comeonin, :pbkdf2_rounds, 1
-config :crocodile, PhoenixBase.Mailer,
+config :phoenix_base, PhoenixBase.Mailer,
   adapter: Bamboo.TestAdapter
