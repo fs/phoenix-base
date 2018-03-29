@@ -28,7 +28,9 @@ defmodule PhoenixBase.Features.Visitor.SignInTest do
 
     assert page_source() =~ "Succesfully logged in"
 
-    find_element(:link_text, "Sign Out") |> click()
+    find_element(:tag, "nav")
+      |> find_within_element(:link_text, "Sign Out")
+      |> click()
 
     assert page_source() =~ "Succesfully logged out"
   end
