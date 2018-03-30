@@ -7,7 +7,15 @@ defmodule PhoenixBase.Features.Visitor.SignInTest do
   alias PhoenixBase.Repo
   alias PhoenixBase.Router.Helpers, as: Routes
 
-  hound_session()
+  hound_session(
+    additional_capabilities: %{
+      chromeOptions: %{ "args" => [
+        "--user-agent=#{Hound.Browser.user_agent(:chrome)}",
+        "--headless",
+        "--disable-gpu"
+      ]}
+    }
+  )
 
   setup do
     User.changeset(%User{}, %{name: "foo", password: "foobar"})
