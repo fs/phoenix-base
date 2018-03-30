@@ -44,4 +44,4 @@ config :phoenix_base, PhoenixBase.Mailer,
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
 
-config :hound, driver: "phantomjs"
+config :hound, driver: "chrome_driver", browser: "chrome_headless"
