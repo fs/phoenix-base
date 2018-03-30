@@ -145,9 +145,8 @@ Please follow the next project structure:
 
 ## Testing
 
-Hound tests require phantomjs started in WebDriver mode:
-
-`phantomjs --wd`
+Hound tests require chrome driver started in headless mode.
+If you are using CI tools like [Semaphore](http://www.semaphoreci.com), it is already preinstalled.
 
 ## Credits
 
