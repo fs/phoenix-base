@@ -10,7 +10,7 @@ defmodule PhoenixBase.Features.Visitor.SignInTest do
   hound_session(
     additional_capabilities: %{
       chromeOptions: %{ "args" => [
-        "--user-agent=#{Hound.Browser.user_agent(:chrome)}",
+        "--user-agent=#{Hound.Browser.user_agent(:chrome) |> Hound.Metadata.append(Phoenix.Ecto.SQL.Sandbox.metadata_for(PhoenixBase.Repo, self()))}",
         "--headless",
         "--disable-gpu"
       ]}
