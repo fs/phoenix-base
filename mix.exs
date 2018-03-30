@@ -43,11 +43,14 @@ defmodule PhoenixBase.Mixfile do
       {:bodyguard, "~> 0.4.0"},
       {:effects, "~> 0.1.0"},
       {:erlexec, "~> 1.2.1"},
+      {:erlware_commons, "~> 1.0"},
       {:distillery, "~> 1.5"},
       {:faker, "~> 0.7"},
       {:gettext, "~> 0.11"},
       {:guardian, "~> 0.13.0"},
       {:guardsafe, "~> 0.5.0"},
+      {:hackney, "~> 1.11"},
+      {:httpoison, "~> 0.13"},
       {:logger_file_backend, "~> 0.0.9"},
       {:monadex, "~> 1.0.2"},
       {:ok, "~> 1.0.0"},
@@ -56,6 +59,7 @@ defmodule PhoenixBase.Mixfile do
       {:phoenix_html, "~> 2.6"},
       {:phoenix_pubsub, "~> 1.0"},
       {:postgrex, ">= 0.0.0"},
+      {:relx, "~> 3.23.1"},
       {:timex, "~> 3.0"},
       {:credo, "~> 0.9", only: ~w(dev test)a},
       {:dialyxir, "~> 0.3", only: :dev},
@@ -64,9 +68,7 @@ defmodule PhoenixBase.Mixfile do
       {:ex_doc, "~> 0.11", only: :dev},
       {:ex_machina, "~> 1.0", only: ~w(dev test)a},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
-      {:hound, "~> 1.0.4", only: :test},
-      {:relx, "~> 3.23.1"},
-      {:erlware_commons, "~> 1.0"}
+      {:hound, "~> 1.0.4", only: :test}
     ]
   end
 
