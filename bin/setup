@@ -23,5 +23,5 @@ yarn install
 
 if [ "$CI" ]; then
   MIX_ENV=test mix do deps.compile, compile
-  chromedriver --headless --disable-gpu --remote-debugging-port=9515
+  chromedriver --headless --disable-gpu --remote-debugging-port=9515 &
 fi
