@@ -30,7 +30,7 @@ defmodule PhoenixBase.Features.Visitor.SignInTest do
     fill_field({:id, "session_name"}, "foo")
     fill_field({:id, "session_password"}, "foobar")
 
-    find_element(:name, "session")
+    find_element(:tag, "form")
       |> find_within_element(:class, "button")
       |> click()
 
