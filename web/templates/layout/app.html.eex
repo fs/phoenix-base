@@ -24,8 +24,7 @@
 
       <div class="nav-right">
         <%= if logged_in?(@conn) do %>
-          <%= link "Sign Out", to: session_path(@conn, :delete, current_user(@conn)),
-            "ujs-method": "delete", class: "nav-item" %>
+          <%= link "Sign Out", [to: session_path(@conn, :delete, current_user(@conn)), class: "nav-item"] ++ sign_out_options %>
         <% else %>
           <%= link "Sign In", to: session_path(@conn, :new), class: "nav-item" %>
           <%= link "Sign Up", to: user_path(@conn, :new), class: "nav-item" %>
