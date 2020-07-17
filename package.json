@@ -30,7 +30,7 @@
     "json-loader": "~0.5.4",
     "less": "2.7.1",
     "less-loader": "2.2.3",
-    "lodash": "4.16.6",
+    "lodash": "4.17.19",
     "node-sass": "^4.5.1",
     "phoenix": "1.2.1",
     "phoenix_ujs": "^0.3.0",
